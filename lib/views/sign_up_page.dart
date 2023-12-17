@@ -110,7 +110,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          "/images/google.png",
+                          "assets/images/google.png",
                           height: 30,
                           width: 30,
                         ),
