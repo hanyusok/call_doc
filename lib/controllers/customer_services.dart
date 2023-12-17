@@ -30,12 +30,13 @@ class CustomerService {
         .doc(user!.uid)
         .collection("customers")
         .orderBy("name");
+
     if (searchQuery != null && searchQuery.isNotEmpty) {
-      String searchEnd = "$searchQuery\uf8ff";
+      String searchEnd = '$searchQuery\uf8ff';
       customerQuery = customerQuery.where("name",
           isGreaterThanOrEqualTo: searchQuery, isEqualTo: searchEnd);
     }
-    final customers = customerQuery.snapshots();
+    var customers = customerQuery.snapshots();
     yield* customers;
   }
 
