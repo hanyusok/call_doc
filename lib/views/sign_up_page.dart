@@ -35,6 +35,21 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: TextFormField(
+                  validator: (value) =>
+                      value!.isEmpty ? "Email can not be empty." : null,
+                  controller: _emailController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text("Email"),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: TextFormField(
                   validator: (value) => value!.length < 8
                       ? "Password should have at least 8 characters."
                       : null,
