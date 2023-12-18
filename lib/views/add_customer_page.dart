@@ -76,6 +76,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                 _nameController.text,
                                 _phoneController.text,
                                 _birthdateController.text);
+                            Navigator.pop(context);
                           }
                         },
                         child: const Text(

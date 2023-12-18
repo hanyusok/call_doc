@@ -99,9 +99,9 @@ class _HomePageState extends State<HomePage> {
                           title: Text(data["name"]),
                           subtitle: Text(data["birthdate"]),
                           trailing: IconButton(
-                            icon: const Icon(Icons.edit_note_outlined),
+                            icon: const Icon(Icons.maps_ugc),
                             onPressed: () {
-                              //coding later for editing
+                              //coding later for kakaotalk link
                             },
                           ),
                         );
