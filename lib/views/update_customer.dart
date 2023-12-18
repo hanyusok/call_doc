@@ -93,6 +93,13 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
                                 _phoneController.text,
                                 _birthdateController.text,
                                 widget.docID);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: const Text(
+                                "updated",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              backgroundColor: Colors.blue.shade400,
+                            ));
                             Navigator.pop(context);
                           }
                         },
@@ -110,6 +117,13 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
                     child: OutlinedButton(
                         onPressed: () {
                           CustomerService().deleteCustomer(widget.docID);
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: const Text(
+                              "deleted",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.red.shade400,
+                          ));
                           Navigator.pop(context);
                         },
                         child: const Text(

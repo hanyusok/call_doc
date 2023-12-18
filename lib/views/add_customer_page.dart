@@ -76,6 +76,13 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                 _nameController.text,
                                 _phoneController.text,
                                 _birthdateController.text);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: const Text(
+                                "customer created",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              backgroundColor: Colors.green.shade400,
+                            ));
                             Navigator.pop(context);
                           }
                         },
