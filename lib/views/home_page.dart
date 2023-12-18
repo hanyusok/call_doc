@@ -71,6 +71,12 @@ class _HomePageState extends State<HomePage> {
                 );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, "/add");
+        },
+        child: const Icon(Icons.add_task_outlined),
+      ),
     );
   }
 }
