@@ -1,15 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class CallDetail {
-  final String id;
-  final String sender;
-  final String memo;
-  final String startTime;
-  final String isRegistered;
-  final String hasPayed;
-  final String notifiedCost;
-  final String phone;
-  final String isPending;
-  final String hasFinished;
-  final String endTime;
+  late String id;
+  late String sender;
+  late String memo;
+  late String startTime;
+  late String isRegistered;
+  late String hasPayed;
+  late String notifiedCost;
+  late String phone;
+  late String isPending;
+  late String hasFinished;
+  late String endTime;
 
   CallDetail({
     required this.id,
@@ -26,6 +28,32 @@ class CallDetail {
   });
 
   Map<String, dynamic> toMap() {
-    'id': id,
+    return {
+      'id': id,
+      'sender': sender,
+      'memo': memo,
+      'startTime': startTime,
+      'isRegistered': isRegistered,
+      'hasPayed': hasPayed,
+      'notifiedCost': notifiedCost,
+      'phone': phone,
+      'isPending': isPending,
+      'hasFinished': hasFinished,
+      'endTime': endTime,
+    };
+  }
+
+  fromMap(Map<String, dynamic> map) {
+    id = (map as QueryDocumentSnapshot).id;
+    sender = map['sender'];
+    memo = map['memo'];
+    startTime = map['startTime'];
+    isRegistered = map['isRegistered'];
+    hasPayed = map['hasPayed'];
+    notifiedCost = map['notifiedCost'];
+    phone = map['phone'];
+    isPending = map['isPending'];
+    hasFinished = map['hasFinished'];
+    endTime = map['endTime'];
   }
 }

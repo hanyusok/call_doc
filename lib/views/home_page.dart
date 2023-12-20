@@ -14,8 +14,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Stream<QuerySnapshot> _stream;
-  final TextEditingController _searchController = TextEditingController();
-  final FocusNode _searchfocusNode = FocusNode();
+  // final TextEditingController _searchController = TextEditingController();
+  // final FocusNode _searchfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -38,33 +38,33 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("마트의원 | 비대면 진료"),
-        bottom: PreferredSize(
-            preferredSize: Size(MediaQuery.of(context).size.width * 8, 80),
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: TextFormField(
-                  onChanged: (value) => {},
-                  focusNode: _searchfocusNode,
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
-                      label: const Text("Search"),
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: _searchController.text.isNotEmpty
-                          ? IconButton(
-                              onPressed: () {
-                                _searchController.clear();
-                                _searchfocusNode.unfocus();
-                                _stream = CustomerService().getCustomers();
-                                setState(() {});
-                              },
-                              icon: const Icon(Icons.close))
-                          : null),
-                ),
-              ),
-            )),
+        // bottom: PreferredSize(
+        //     preferredSize: Size(MediaQuery.of(context).size.width * 8, 80),
+        //     child: Container(
+        //       padding: const EdgeInsets.symmetric(vertical: 8),
+        //       child: SizedBox(
+        //         width: MediaQuery.of(context).size.width * 0.9,
+        //         child: TextFormField(
+        //           onChanged: (value) => {},
+        //           focusNode: _searchfocusNode,
+        //           controller: _searchController,
+        //           decoration: InputDecoration(
+        //               border: const OutlineInputBorder(),
+        //               label: const Text("Search"),
+        //               prefixIcon: const Icon(Icons.search),
+        //               suffixIcon: _searchController.text.isNotEmpty
+        //                   ? IconButton(
+        //                       onPressed: () {
+        //                         _searchController.clear();
+        //                         _searchfocusNode.unfocus();
+        //                         _stream = CustomerService().getCustomers();
+        //                         setState(() {});
+        //                       },
+        //                       icon: const Icon(Icons.close))
+        //                   : null),
+        //         ),
+        //       ),
+        //     )),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: _stream,

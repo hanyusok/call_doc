@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:call_doc/controllers/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -146,6 +149,54 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: const Text("Sign Up"))
                 ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 65,
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: OutlinedButton(
+                    onPressed: () async {
+                      if (await isKakaoTalkInstalled()) {
+                        try {
+                          OAuthToken token =
+                              await UserApi.instance.loginWithKakaoTalk();
+                          log('카카오톡 로그인 성공 : token ${token.accessToken.toString()}');
+                        } catch (error) {
+                          log('카카오톡 로그인 실패 : ${error.toString()}');
+                        }
+                      }
+                      // AuthService().continueWithGoogle().then((value) {
+                      //   if (value == "Google Login Successful") {
+                      //     ScaffoldMessenger.of(context).showSnackBar(
+                      //         const SnackBar(
+                      //             content: Text("Google Login Successful")));
+                      //     Navigator.pushReplacementNamed(context, "/home");
+                      //   } else {
+                      //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      //       content: Text(
+                      //         value,
+                      //         style: TextStyle(color: Colors.red.shade400),
+                      //       ),
+                      //       backgroundColor: Colors.red.shade400,
+                      //     ));
+                      //   }
+                      // });
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.maps_ugc),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Continue with KakaoTalk",
+                          style: TextStyle(fontSize: 16),
+                        )
+                      ],
+                    )),
               ),
             ],
           ),
