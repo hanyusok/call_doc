@@ -13,11 +13,11 @@ class TabIndex extends StatefulWidget {
 
 class _TabIndexState extends State<TabIndex> {
   int _currentIndex = 0;
-  List<Widget> _tabs = [
-    TabHome(),
-    TabList(),
-    TabDesk(),
-    TabProfile(),
+  final List<Widget> _tabs = [
+    const TabHome(),
+    const TabList(),
+    const TabDesk(),
+    const TabProfile(),
   ];
 
   @override
@@ -36,7 +36,7 @@ class _TabIndexState extends State<TabIndex> {
               _currentIndex = index;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.list_alt_outlined), label: '콜닥'),

@@ -159,9 +159,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: OutlinedButton(
                     onPressed: () {
                       AuthService().continueWithKakao();
-                      // Navigator.pushReplacementNamed(context, "/home");
+                      Navigator.pushReplacementNamed(context, "/home");
                       //tab index로 nav
-                      Navigator.pushReplacementNamed(context, "/tabindex");
+                      //Navigator.pushReplacementNamed(context, "/tabindex");
 
                       // AuthService().continueWithGoogle().then((value) {
                       //   if (value == "Google Login Successful") {
