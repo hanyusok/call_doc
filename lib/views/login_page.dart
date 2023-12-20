@@ -1,9 +1,9 @@
-import 'dart:math';
+// import 'dart:math';
 
 import 'package:call_doc/controllers/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+// import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -157,16 +157,12 @@ class _LoginPageState extends State<LoginPage> {
                 height: 65,
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: OutlinedButton(
-                    onPressed: () async {
-                      if (await isKakaoTalkInstalled()) {
-                        try {
-                          OAuthToken token =
-                              await UserApi.instance.loginWithKakaoTalk();
-                          log('카카오톡 로그인 성공 : token ${token.accessToken.toString()}');
-                        } catch (error) {
-                          log('카카오톡 로그인 실패 : ${error.toString()}');
-                        }
-                      }
+                    onPressed: () {
+                      AuthService().continueWithKakao();
+                      // Navigator.pushReplacementNamed(context, "/home");
+                      //tab index로 nav
+                      Navigator.pushReplacementNamed(context, "/tabindex");
+
                       // AuthService().continueWithGoogle().then((value) {
                       //   if (value == "Google Login Successful") {
                       //     ScaffoldMessenger.of(context).showSnackBar(
