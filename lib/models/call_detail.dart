@@ -6,6 +6,7 @@ class CallDetail {
   late String memo;
   late String startTime;
   late String isRegistered;
+  late int cost;
   late String hasPayed;
   late String notifiedCost;
   late String phone;
@@ -19,6 +20,7 @@ class CallDetail {
     required this.memo,
     required this.startTime,
     required this.isRegistered,
+    required this.cost,
     required this.hasPayed,
     required this.notifiedCost,
     required this.phone,

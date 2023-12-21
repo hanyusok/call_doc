@@ -109,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                   content: Text("Google Login Successful")));
-                          Navigator.pushReplacementNamed(context, "/home");
+                          Navigator.pushReplacementNamed(context, "/tabindex");
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text(
