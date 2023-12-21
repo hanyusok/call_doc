@@ -78,7 +78,9 @@ class _LoginPageState extends State<LoginPage> {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text("Login Successful")));
-                            Navigator.pushReplacementNamed(context, "/home");
+                            // Navigator.pushReplacementNamed(context, "/home");
+                            Navigator.pushReplacementNamed(
+                                context, "/tabindex");
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: Text(
@@ -158,8 +160,8 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: OutlinedButton(
                     onPressed: () {
-                      AuthService().continueWithKakao();
-                      Navigator.pushReplacementNamed(context, "/home");
+                      // AuthService().continueWithKakao();
+                      // Navigator.pushReplacementNamed(context, "/home");
                       //tab index로 nav
                       //Navigator.pushReplacementNamed(context, "/tabindex");
 
