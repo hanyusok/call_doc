@@ -40,7 +40,7 @@ class _TabIndexState extends State<TabIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("마트의원 | 비대면 진료"),
+        title: const Text('비대면진료'),
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -59,7 +59,7 @@ class _TabIndexState extends State<TabIndex> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmarks_sharp), label: '콜닥'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.support_agent_outlined), label: '접수'),
+                icon: Icon(Icons.support_agent_outlined), label: '알림'),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: '설정'),
           ]),
       drawer: Drawer(

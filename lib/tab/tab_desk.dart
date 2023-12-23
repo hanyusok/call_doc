@@ -11,7 +11,7 @@ class _TabDeskState extends State<TabDesk> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('접수 데스크'),
+      child: Text('알림'),
     );
   }
 }
