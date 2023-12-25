@@ -1,22 +1,24 @@
-import 'package:call_doc/controllers/customer_services.dart';
+import 'package:call_doc/controllers/user_services.dart';
 import 'package:flutter/material.dart';
 
-class UpdateCustomer extends StatefulWidget {
-  const UpdateCustomer(
+class UpdateUser extends StatefulWidget {
+  const UpdateUser(
       {super.key,
-      required this.docID,
+      // required this.docID,
       required this.name,
+      required this.address,
       required this.phone,
       required this.birthdate});
 
-  final String docID, name, phone, birthdate;
+  final String name, address, phone, birthdate;
 
   @override
-  State<UpdateCustomer> createState() => _UpdateCustomerState();
+  State<UpdateUser> createState() => _UpdateUserState();
 }
 
-class _UpdateCustomerState extends State<UpdateCustomer> {
+class _UpdateUserState extends State<UpdateUser> {
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _birthdateController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -25,6 +27,7 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
   void initState() {
     _nameController.text = widget.name;
     _phoneController.text = widget.phone;
+    _addressController.text = widget.address;
     _birthdateController.text = widget.birthdate;
     super.initState();
   }
@@ -33,7 +36,7 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Update Customer"),
+        title: const Text("Update User"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -52,6 +55,17 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
                       controller: _nameController,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), label: Text("name")),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    child: TextFormField(
+                      controller: _addressController,
+                      decoration: const InputDecoration(
+                          border: OutlineInputBorder(), label: Text("address")),
                     ),
                   ),
                   const SizedBox(
@@ -87,11 +101,12 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
                     child: ElevatedButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            CustomerService().updateCustomer(
-                                _nameController.text,
-                                _phoneController.text,
-                                _birthdateController.text,
-                                widget.docID);
+                            UserService().updateUser(
+                              _nameController.text,
+                              _addressController.text,
+                              _phoneController.text,
+                              _birthdateController.text,
+                            );
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: const Text(
                                 "updated",
@@ -115,7 +130,7 @@ class _UpdateCustomerState extends State<UpdateCustomer> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     child: OutlinedButton(
                         onPressed: () {
-                          CustomerService().deleteCustomer(widget.docID);
+                          // UserService().deleteUser(widget.docID);
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: const Text(
                               "deleted",
