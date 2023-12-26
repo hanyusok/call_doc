@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 
 class TabHome extends StatefulWidget {
   const TabHome({super.key});
@@ -27,15 +27,7 @@ class _TabHomeState extends State<TabHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.blue,
-          statusBarColor: Colors.red,
-        ),
-        iconTheme: const IconThemeData(color: Colors.black87),
-      ),
+      // appBar: AppBar(),
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,

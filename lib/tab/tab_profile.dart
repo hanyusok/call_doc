@@ -1,7 +1,7 @@
 import 'package:call_doc/controllers/user_services.dart';
 import 'package:call_doc/tab/update_user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class TabProfile extends StatefulWidget {

@@ -47,23 +47,42 @@ class _TabListState extends State<TabList> {
                       .map((DocumentSnapshot document) {
                         Map<String, dynamic> data =
                             document.data()! as Map<String, dynamic>;
-                        return ListTile(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => UpdateCustomer(
-                                      docID: document.id,
-                                      name: data["name"],
-                                      phone: data["phone"],
-                                      birthdate: data["birthdate"]))),
-                          leading: CircleAvatar(child: Text(data["name"][0])),
-                          title: Text(data["name"]),
-                          subtitle: Text(data["birthdate"]),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.maps_ugc),
-                            onPressed: () {
-                              //coding later for kakaotalk link
-                            },
+                        return Card(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              ListTile(
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => UpdateCustomer(
+                                            docID: document.id,
+                                            name: data["name"],
+                                            memo: data["memo"],
+                                            phone: data["phone"],
+                                            birthdate: data["birthdate"]))),
+                                leading:
+                                    CircleAvatar(child: Text(data["name"][0])),
+                                title: Text(data["memo"]),
+                                subtitle: Text(data["createdAt"]),
+                                trailing: IconButton(
+                                  icon: const Icon(Icons.maps_ugc),
+                                  onPressed: () {
+                                    //coding later for kakaotalk link
+                                  },
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: <Widget>[
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: const Text("자세히")),
+                                  TextButton(
+                                      onPressed: () {}, child: const Text("신청"))
+                                ],
+                              ),
+                            ],
                           ),
                         );
                       })

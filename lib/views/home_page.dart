@@ -93,6 +93,7 @@ class _HomePageState extends State<HomePage> {
                                   builder: (context) => UpdateCustomer(
                                       docID: document.id,
                                       name: data["name"],
+                                      memo: data["memo"],
                                       phone: data["phone"],
                                       birthdate: data["birthdate"]))),
                           leading: CircleAvatar(child: Text(data["name"][0])),

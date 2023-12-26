@@ -6,11 +6,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 class CustomerService {
   User? user = FirebaseAuth.instance.currentUser;
 
-  Future addNewCustomer(String name, String phone, String birhtdate) async {
+  Future addNewCustomer(String name, String memo, String phone,
+      String birhtdate, String createdAt) async {
     Map<String, dynamic> data = {
       "name": name,
+      "memo": memo,
       "phone": phone,
-      "birthdate": birhtdate
+      "birthdate": birhtdate,
+      "createdAt": createdAt,
     };
     try {
       await FirebaseFirestore.instance
@@ -40,10 +43,11 @@ class CustomerService {
     yield* customers;
   }
 
-  Future updateCustomer(
-      String name, String phone, String birthdate, String docID) async {
+  Future updateCustomer(String name, String memo, String phone,
+      String birthdate, String docID) async {
     Map<String, dynamic> data = {
       "name": name,
+      "memo": memo,
       "phone": phone,
       "birthdate": birthdate
     };

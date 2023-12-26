@@ -21,3 +21,6 @@ https://medium.com/flutter-korea/flutter%EC%97%90%EC%84%9C-firestore-%EC%82%AC%E
 
 ### profileTab reference
 https://github.com/theindianappguy/doctor_booking_app/blob/master/lib/views/doctor_info.dart
+
+### useful commands
+flutter update-packages
