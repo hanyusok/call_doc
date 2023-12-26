@@ -56,12 +56,25 @@ class _TabProfileState extends State<TabProfile> {
                           Map<String, dynamic> data =
                               document.data()! as Map<String, dynamic>;
                           return ListTile(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => UpdateUser(
+                                          name: data["name"],
+                                          address: data["address"],
+                                          phone: data["phone"],
+                                          birthdate: data["birthdate"])));
+                            },
                             leading: CircleAvatar(
                               child: Text(data["birthdate"]),
                             ),
                             title: Text(data["address"]),
                             subtitle: Text(data["name"]),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.people_alt_sharp),
+                              onPressed: () {},
+                            ),
                           );
                         })
                         .toList()
