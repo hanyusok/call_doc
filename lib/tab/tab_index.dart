@@ -109,6 +109,11 @@ class _TabIndexState extends State<TabIndex> {
             ),
             ListTile(
               leading: const Icon(Icons.power_off_outlined),
+              title: const Text("처방전 설정"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.power_off_outlined),
               title: const Text("알림 설정"),
               onTap: () {},
             ),

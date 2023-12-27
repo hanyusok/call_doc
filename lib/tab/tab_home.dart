@@ -39,7 +39,7 @@ class _TabHomeState extends State<TabHome> {
                 height: 10,
               ),
               Text(
-                "Find your nearby \nClinics",
+                "진료 안내",
                 style: TextStyle(
                     color: Colors.black87.withOpacity(0.8),
                     fontSize: 30,
@@ -60,7 +60,7 @@ class _TabHomeState extends State<TabHome> {
                     width: 10,
                   ),
                   Text(
-                    "Search",
+                    "검색",
                     style: TextStyle(color: Colors.grey, fontSize: 19),
                   )
                 ]),
@@ -69,7 +69,7 @@ class _TabHomeState extends State<TabHome> {
                 height: 30,
               ),
               Text(
-                "Categories",
+                "비대면 안내",
                 style: TextStyle(
                     color: Colors.black87.withOpacity(0.8),
                     fontSize: 27,
@@ -114,7 +114,7 @@ class _TabHomeState extends State<TabHome> {
                 //     }),
               ),
               Text(
-                "Doctors",
+                "한유석 원장",
                 style: TextStyle(
                     color: Colors.black87.withOpacity(0.8),
                     fontSize: 25,
