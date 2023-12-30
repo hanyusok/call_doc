@@ -33,3 +33,6 @@ flutter update-packages
 tokyo night
 bloc
 error lens
+
+###  firestore kakao login link
+https://lanicc.medium.com/%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-1-455e0b5f50c8

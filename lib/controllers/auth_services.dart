@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
@@ -50,20 +51,28 @@ class AuthService {
     }
   }
 
-  Future<OAuthToken> continueWithKakao() async {
-    late OAuthToken token;
+  Future<void> continueWithKakao() async {
     if (await isKakaoTalkInstalled()) {
       try {
-        token = await UserApi.instance.loginWithKakaoTalk();
-        log('카카오 계정으로 로그인 성공 : ${token.accessToken}');
-        return token;
+        await UserApi.instance.loginWithKakaoAccount();
+        log('카카오 계정 로그인 성공');
       } catch (e) {
-        log('카카오 계정 로그인 실패 : {$e}');
+        log('카카오 계정 로그인 실패: $e');
+        if (e is PlatformException && e.code == 'CANCELED') {}
+        try {
+          await UserApi.instance.loginWithKakaoAccount();
+          log('카카오 계정 로그인 성공');
+        } catch (e) {
+          log('카카오 계정 로그인 실패: $e');
+        }
       }
     } else {
-      log("카카오 로그인 계정 만드세요");
+      try {
+        await UserApi.instance.loginWithKakaoAccount();
+        log('카카오 계정 로그인 성공');
+      } catch (e) {
+        log('카카오계정 로그인 실패: $e');
+      }
     }
-    await TokenManagerProvider.instance.manager.setToken(token);
-    return token;
   }
 }

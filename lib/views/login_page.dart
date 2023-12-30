@@ -1,8 +1,13 @@
 // import 'dart:math';
 
+// import 'dart:developer';
+
 import 'package:call_doc/controllers/auth_services.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+
 // import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginPage extends StatefulWidget {
@@ -108,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                   content: Text("Google Login Successful")));
-                          Navigator.pushReplacementNamed(context, "/home");
+                          Navigator.pushReplacementNamed(context, "/tabindex");
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text(
@@ -160,10 +165,11 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: OutlinedButton(
                     onPressed: () {
-                      // AuthService().continueWithKakao();
+                      AuthService().continueWithKakao();
+                      Navigator.pushReplacementNamed(context, "/tabindex");
+
                       // Navigator.pushReplacementNamed(context, "/home");
                       //tab index로 nav
-                      //Navigator.pushReplacementNamed(context, "/tabindex");
 
                       // AuthService().continueWithGoogle().then((value) {
                       //   if (value == "Google Login Successful") {
