@@ -1,6 +1,6 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
@@ -51,16 +51,18 @@ class AuthService {
     }
   }
 
-  Future<void> continueWithKakao() async {
+  Future<void> continueWithKakao(context) async {
     if (await isKakaoTalkInstalled()) {
       try {
         await UserApi.instance.loginWithKakaoAccount();
         log('카카오 계정 로그인 성공');
+        Navigator.pushReplacementNamed(context, "/tabindex");
       } catch (e) {
         log('카카오 계정 로그인 실패: $e');
         if (e is PlatformException && e.code == 'CANCELED') {}
         try {
           await UserApi.instance.loginWithKakaoAccount();
+          Navigator.pushReplacementNamed(context, "/tabindex");
           log('카카오 계정 로그인 성공');
         } catch (e) {
           log('카카오 계정 로그인 실패: $e');
@@ -69,6 +71,7 @@ class AuthService {
     } else {
       try {
         await UserApi.instance.loginWithKakaoAccount();
+        Navigator.pushReplacementNamed(context, "/tabindex");
         log('카카오 계정 로그인 성공');
       } catch (e) {
         log('카카오계정 로그인 실패: $e');

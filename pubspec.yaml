@@ -18,6 +18,11 @@ dependencies:
   kakao_flutter_sdk: ^1.7.0
   intl: ^0.19.0
   kakao_flutter_sdk_user: ^1.8.0
+  dio: ^5.4.0
+  json_annotation: ^4.8.1
+  package_info: ^2.0.2
+  platform: ^3.1.4
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

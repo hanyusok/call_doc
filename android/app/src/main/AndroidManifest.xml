@@ -2,8 +2,7 @@
     <application
         android:label="call_doc"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
-        android:allowBackup="true">
+        android:icon="@mipmap/ic_launcher">
 
         <activity
             android:name=".MainActivity"
@@ -17,8 +16,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-            <intent-filter>
-                
+            <intent-filter>                
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <data android:scheme="kakao73f47c741e295d7406e75fb3d246065a" android:host="oauth"/>
@@ -29,3 +27,6 @@
             android:value="2" />
     </application>
 </manifest>
+
+
+

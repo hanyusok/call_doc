@@ -165,8 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: OutlinedButton(
                     onPressed: () {
-                      AuthService().continueWithKakao();
-                      Navigator.pushReplacementNamed(context, "/tabindex");
+                      AuthService().continueWithKakao(context);
 
                       // Navigator.pushReplacementNamed(context, "/home");
                       //tab index로 nav
