@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class MeetingModel {
   final String address;
   final Map foodList;
@@ -27,13 +25,4 @@ class MeetingModel {
       'total': total,
     };
   }
-
-  // fromMap(Map<String, dynamic> map) {
-  //   address = map['address'];
-  //   foodList = map['foodList'];
-  //   name = map['name'];
-  //   uid = map['uid'];
-  //   status = map['status'];
-  //   total = map['total'];
-  // }
 }

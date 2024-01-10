@@ -43,3 +43,6 @@ https://kyungsnim.net/112
 
 ### reference
 https://github.com/proudofyou9/food_delivery_app.git
+
+### user model template
+randomuser.me
